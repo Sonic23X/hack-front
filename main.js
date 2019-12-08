@@ -1,6 +1,9 @@
 $(document).ready(function ()
 {
     M.AutoInit();
+
+    var center = ol.proj.transform([-11011971.24, 2332451.05], 'EPSG:3857', 'EPSG:3857');
+
     var styles = [
       new ol.style.Style({
         stroke: new ol.style.Stroke({
@@ -19,28 +22,26 @@ $(document).ready(function ()
           })
         }),
         geometry: function(feature) {
-          // return the coordinates of the first ring of the polygon
           var coordinates = feature.getGeometry().getCoordinates()[0];
           return new ol.geom.MultiPoint(coordinates);
         }
       })
     ];
 
-    var geojsonObject = {
+    var geojsonObject =
+    {
       'type': 'FeatureCollection',
-      'crs': {
-        'type': 'name',
-        'properties': {
-          'name': 'EPSG:3857'
-        }
-      },
       'features': [{
         'type': 'Feature',
         'geometry': {
           'type': 'Polygon',
-          'coordinates': [[[-5e6, 6e6], [-5e6, 8e6], [-3e6, 8e6],
-              [-3e6, 6e6], [-5e6, 6e6]], [[-5e6, 6e6], [-5e6, 8e6], [-3e6, 8e6],
-                  [-3e6, 6e6], [-5e6, 6e6]]]
+          'coordinates':
+          [[
+            [2.014491e6,-9.84451239e6],
+            [2e6, 4e6],
+            [5e6, -5e6],
+            [2.014491e6,-9.84451239e6],
+          ]]
         }
       }]
     };
@@ -62,9 +63,12 @@ $(document).ready(function ()
       layers: [basic, layer],
       target: 'map',
       view: new ol.View({
-        center: [0, 3000000],
-        zoom: 2
+        center: center,
+        zoom: 8
       })
     });
+
+
+
 
 });
