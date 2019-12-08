@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	  <link rel="stylesheet" href="openlayer/ol.css">
+    <link rel="stylesheet" href="style.css">
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home - Dif</title>
+
+</head>
+
+<body>
+
+    <nav class="primary" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">DIF Hidalgo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Busqueda</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#">Busqueda</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br><br>
+            <h1 class="header center orange-text">Desarrollo Social</h1>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <div class="input-field col l6 s12">
+                        <select id="form-form-input-municipio" name="municipio">
+                            <option value="" disabled selected>Selecciona Municipio</option>
+                        </select>
+                        <label>Municipio</label>
+                    </div>
+                </div>
+                <div class="col l6 s12">
+                    <div id="map"></div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col s12">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer primary">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+					<h5 class="white-text">detalles</h5>
+                    <div id="data"></div>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">ver más</h5>
+                    <ul>
+
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="openlayer/ol.js"></script>
+    <script src="main.js"></script>
+	<script>M.AutoInit(); </script>
+	</body></html>
